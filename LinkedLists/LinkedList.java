@@ -79,10 +79,10 @@ public class LinkedList {
     }
 
     public int size() throws StackException {
-        int size = 0;
+        int size = 1;
 
         if (headNode == null) {
-            return size;
+            return 0;
         } else {
             Node pointer = headNode;
             while (pointer.nextNode != null) {
