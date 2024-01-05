@@ -108,4 +108,21 @@ public class DoublyLinkedList {
             return temp;
         }
     }
+
+    public Object get(int idx) {
+        Object value = null;
+
+        int i = 0;
+        Node pointer = headNode;
+        while (i <= idx) {
+            if (pointer == null) {
+                return null;
+            } else {
+                value = pointer.getValue();
+                pointer = pointer.getNextNode();
+                i++;
+            }
+        }
+        return value;
+    }
 }
