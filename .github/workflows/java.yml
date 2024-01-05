@@ -29,9 +29,3 @@ jobs:
       run: |
         javac -cp .:junit-platform-console-standalone-1.7.0.jar Tests/*.java
         java -jar junit-platform-console-standalone-1.7.0.jar --class-path . --scan-class-path
-
-    - name: Upload test results
-      uses: actions/upload-artifact@v2
-      with:
-        name: test-results
-        path: build/reports/tests
