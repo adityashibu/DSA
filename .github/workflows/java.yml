@@ -27,8 +27,8 @@ jobs:
 
     - name: Compile and run tests
       run: |
-        javac -cp .:junit-platform-console-standalone-x.y.z.jar Tests/*.java
-        java -jar junit-platform-console-standalone-x.y.z.jar --class-path . --scan-class-path
+        javac -cp .:junit-platform-console-standalone-1.7.0.jar Tests/*.java
+        java -jar junit-platform-console-standalone-1.7.0.jar --class-path . --scan-class-path
 
     - name: Upload test results
       uses: actions/upload-artifact@v2
