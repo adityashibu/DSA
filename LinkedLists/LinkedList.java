@@ -1,5 +1,7 @@
 package LinkedLists;
 
+import Stacks.StackException;
+
 public class LinkedList {
     private class Node {
         private int value;
@@ -55,5 +57,59 @@ public class LinkedList {
         Node newNode = new Node(i);
         newNode.setNextNode(headNode);
         headNode = newNode;
+    }
+
+    public void addAtTail(int i) {
+        Node newNode = new Node(i);
+        if (headNode == null) {
+            headNode = newNode;
+        } else {
+            headNode.addNodeAtTail(newNode);
+        }
+    }
+
+    public int removeAtTail() throws StackException {
+        if (headNode == null) {
+            throw new StackException("Stack is empty");
+        } else {
+            Node returnedNode = headNode;
+            headNode = headNode.removeAtTail(returnedNode);
+            return returnedNode.getValue();
+        }
+    }
+
+    public int size() throws StackException {
+        int size = 1;
+
+        if (headNode == null) {
+            throw new StackException("Stack is empty");
+        } else {
+            Node pointer = headNode;
+            while (pointer.nextNode != null) {
+                pointer = pointer.getNextNode();
+                size++;
+            }
+
+            return size;
+        }
+    }
+
+    public int total() throws StackException {
+        int total = 0;
+
+        if (headNode == null) {
+            throw new StackException("Stack is empty");
+        } else {
+            Node pointer = headNode;
+            total = pointer.getValue();
+
+            while (pointer.getNextNode() != null) {
+                pointer = pointer.getNextNode();
+                int x = pointer.getValue();
+                total = total + x;
+            }
+
+            return total;
+        }
     }
 }
