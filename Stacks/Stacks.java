@@ -1,11 +1,5 @@
 package Stacks;
 
-class StackException extends RuntimeException {
-    public StackException(String err) {
-        super(err);
-    }
-}
-
 public class Stacks implements StackADT {
 
     public int top;
