@@ -79,10 +79,10 @@ public class LinkedList {
     }
 
     public int size() throws StackException {
-        int size = 1;
+        int size = 0;
 
         if (headNode == null) {
-            throw new StackException("Stack is empty");
+            return size;
         } else {
             Node pointer = headNode;
             while (pointer.nextNode != null) {
@@ -98,7 +98,7 @@ public class LinkedList {
         int total = 0;
 
         if (headNode == null) {
-            throw new StackException("Stack is empty");
+            return total;
         } else {
             Node pointer = headNode;
             total = pointer.getValue();
