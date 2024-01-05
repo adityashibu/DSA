@@ -1,4 +1,4 @@
-name: Java CI with JUnit
+name: Run JUnit Tests
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,10 +19,13 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
 
-    - name: Build with Maven
+    - name: Compile and run tests
       run: |
-        ./mvnw install -B
+        javac -cp .:junit-platform-console-standalone-<version>.jar Tests/*.java
+        java -jar junit-platform-console-standalone-<version>.jar --class-path . --scan-class-path
 
-    - name: Run tests
-      run: |
-        ./mvnw test
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: build/reports/tests
