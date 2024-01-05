@@ -32,7 +32,7 @@ public class StacksTest {
         st.push("A");
 
         assertEquals("A", st.top());
-        assertEquals("A", st.top());
+        assertEquals("B", st.top());
     }
 
     @Test (expected = StackException.class)
