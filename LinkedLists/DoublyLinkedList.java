@@ -67,13 +67,12 @@ public class DoublyLinkedList {
         newNode.setNextNode(headNode);
         if (headNode != null) {
             headNode.setPrevNode(newNode);
+            newNode.setNextNode(headNode);
         } else {
-            headNode = newNode;
-        }
-
-        if (tailNode == null) {
             tailNode = newNode;
         }
+
+        headNode = newNode;
     }
 
     public void addAtTail(Object o) {
