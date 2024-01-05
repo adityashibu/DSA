@@ -21,7 +21,8 @@ jobs:
 
     - name: Download JUnit JAR
       run: |
-        wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/x.y.z/junit-platform-console-standalone-x.y.z.jar
+        wget wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.7.0/junit-platform-console-standalone-1.7.0.jar
+
         ls -al  # Verify that the JUnit JAR is downloaded
 
     - name: Compile and run tests
