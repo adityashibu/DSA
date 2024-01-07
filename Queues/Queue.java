@@ -28,18 +28,32 @@ public class Queue implements QueueADT {
     }
 
     public boolean isEmpty() {
-        return false;
+        return (front == rear);
     }
 
     public Object front() throws QueueException {
-        return null;
+        if (isEmpty())
+            throw new QueueException("Queue is empty");
+
+        Object temp = Q[front];
+        Q[front] = null;
+        front = (front + 1) % capacity;
+        return temp;
     }
 
     public Object dequeue() throws QueueException {
-        return null;
+        if (isEmpty())
+            throw new QueueException("Queue is empty");
+        Object temp = Q[front];
+        Q[front] = null;
+        front = (front + 1) % capacity;
+        return temp;
     }
 
     public void enqueue(Object e) {
-
+        if (size() == Q.length - 1)
+            throw new QueueException("Queue is full");
+        Q[rear] = e;
+        rear = (rear + 1) % capacity;
     }
 }
