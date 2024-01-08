@@ -1,6 +1,7 @@
 package Tests;
 
 import Queues.Queue;
+import Queues.QueueException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -38,5 +39,32 @@ public class QueuesTest {
         q.enqueue(20);
 
         assertEquals(2, q.size());
+    }
+
+    @Test
+    public void testcaseEnqueue() {
+        q.enqueue(10);
+        q.enqueue(20);
+
+        assertEquals(10, q.front());
+    }
+
+    @Test
+    public void testcaseDequeue() {
+        q.enqueue(10);
+        q.enqueue(20);
+        q.enqueue(30);
+
+        assertEquals(10, q.dequeue());
+    }
+
+    @Test(expected = QueueException.class)
+    public void testcaseEmptyDequeue() {
+        q.dequeue();
+    }
+
+    @Test(expected = QueueException.class)
+    public void testcaseEmptyFront() {
+        q.front();
     }
 }

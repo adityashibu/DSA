@@ -1,10 +1,5 @@
 package Queues;
 
-class QueueException extends RuntimeException {
-    public QueueException(String err) {
-        super (err);
-    }
-}
 public class Queue implements QueueADT {
     private int front;
     private int rear;
