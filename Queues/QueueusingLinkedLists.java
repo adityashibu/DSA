@@ -33,8 +33,7 @@ public class QueueusingLinkedLists implements QueueADT {
     }
 
     public boolean isEmpty() {
-        if (head == tail) return true;
-        return false;
+        return (head == null);
     }
 
     public Object front() throws QueueException {
