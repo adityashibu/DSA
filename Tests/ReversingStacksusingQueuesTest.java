@@ -21,4 +21,17 @@ public class ReversingStacksusingQueuesTest {
         assertEquals("C", st.pop());
     }
 
+    @Test
+    public void reverseStackIntegersTest() {
+        Stacks st = new Stacks(5);
+        st.push(1);
+        st.push(2);
+        st.push(3);
+
+        ReversingStacksusingQueues.reverseStack(st);
+        assertEquals(1, st.pop());
+        assertEquals(2, st.pop());
+        assertEquals(3, st.pop());
+    }
+
 }
