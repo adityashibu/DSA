@@ -1,11 +1,5 @@
 package Queues;
 
-class PriorityQueueException extends RuntimeException{
-    public PriorityQueueException(String err) {
-        super(err);
-    }
-}
-
 public class PriorityQueue implements PriorityQueueADT {
 
     private int[] heap;
